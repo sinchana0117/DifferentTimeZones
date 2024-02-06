@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>p1</title>
+<style>
+.Time{
+border:5px solid#f00;
+border-radius:5px;
+horizontal-space:50px;
+height:180px;
+width:180px;
+display:inline-block;
+justify-content: center;
+
+}
+.Time h1{text-align:center;}
+.Time p{text-align:center;
+font-weight:bold;
+font-size:18px;}
+</style>
+</head>
+
+<body>
+<h1><center>Time According to Different Time Zones</center></h1>
+<div class="Time">
+<h1>India</h1>
+<p id="T1"</p>
+</div>
+
+<div class="Time">
+<h1>London</h1>
+<p id="T2"</p>
+</div>
+
+<div class="Time">
+<h1>New York</h1>
+<p id="T3"</p>
+</div>
+
+<div class="Time">
+<h1>Sydney</h1>
+<p id="T4"</p>
+</div>
+<script>
+var IndianTime=function(){
+document.getElementById("T1").innerHTML= new Date().toLocaleString("en-US",{timeZone:'Asia/Kolkata',timeStyle:'long',hourCycle:'h24'});
+}
+IndianTime();
+setInterval(IndianTime,1000);
+
+var LondonTime=function(){
+document.getElementById("T2").innerHTML= new Date().toLocaleString("en-US",{timeZone:'Europe/London',timeStyle:'long',hourCycle:'h24'});
+}
+LondonTime();
+setInterval(LondonTime,1000);
+
+var NewYorkTime=function(){
+document.getElementById("T3").innerHTML= new Date().toLocaleString("en-US",{timeZone:'America/New_york',timeStyle:'long',hourCycle:'h24'});
+}
+NewYorkTime();
+setInterval(NewYorkTime,1000);
+
+var SydneyTime=function(){
+document.getElementById("T4").innerHTML= new Date().toLocaleString("en-US",{timeZone:'Australia/Sydney',timeStyle:'long',hourCycle:'h24'});
+}
+SydneyTime();
+setInterval(SydneyTime,1000);
+</script>
+
+</body>
+</html>
